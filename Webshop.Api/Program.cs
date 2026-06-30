@@ -12,8 +12,9 @@ public class Program
         builder.Services.AddControllers();
         // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
         builder.Services.AddOpenApi();
-        builder.Services.AddSingleton<IProductRepository>();
+        builder.Services.AddSingleton<IProductRepository, InMemoryProductRepository>();
         builder.Services.AddScoped<IProductService, ProductService>();
+        builder.Services.AddScoped<IOrderService, OrderService>();
 
         var app = builder.Build();
 

@@ -14,12 +14,12 @@ public sealed class ProductService : IProductService
             throw new ArgumentException("Product name is required", nameof(name));
         }
 
-        if (price < 0)
+        if (price <= 0)
         {
             throw new ArgumentException("Price cannot be less than 0", nameof(price));
         }
 
-        if (stockQuantity < 0)
+        if (stockQuantity <= 0)
         {
             throw new ArgumentException("Product is currently not in stock", nameof(stockQuantity));
         }
