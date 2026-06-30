@@ -12,6 +12,8 @@ public class Program
         builder.Services.AddControllers();
         // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
         builder.Services.AddOpenApi();
+        builder.Services.AddSingleton<IProductRepository>();
+        builder.Services.AddScoped<IProductService, ProductService>();
 
         var app = builder.Build();
 
@@ -24,7 +26,6 @@ public class Program
         app.UseHttpsRedirection();
 
         app.UseAuthorization();
-
 
         app.MapControllers();
 

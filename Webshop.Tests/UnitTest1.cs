@@ -1,4 +1,6 @@
-﻿namespace Webshop.Tests;
+﻿using Moq;
+using Webshop.Api;
+namespace Webshop.Tests;
 
 public class UnitTest1
 {

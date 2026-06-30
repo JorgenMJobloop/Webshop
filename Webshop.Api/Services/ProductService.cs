@@ -6,13 +6,39 @@ public sealed class ProductService : IProductService
     {
         _repository = repository;
     }
-    public Task<Product> CreateProductAsync(string name, double price, int stockQuantity)
+
+    public async Task<Product> CreateProductAsync(string name, double price, int stockQuantity)
     {
-        throw new NotImplementedException();
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            throw new ArgumentException("Product name is required", nameof(name));
+        }
+
+        if (price < 0)
+        {
+            throw new ArgumentException("Price cannot be less than 0", nameof(price));
+        }
+
+        if (stockQuantity < 0)
+        {
+            throw new ArgumentException("Product is currently not in stock", nameof(stockQuantity));
+        }
+
+        var product = new Product
+        {
+            Id = Guid.NewGuid(),
+            Name = name,
+            Price = price,
+            StockQuantity = stockQuantity
+        };
+
+        await _repository.AddAsync(product);
+
+        return product;
     }
 
-    public Task<IReadOnlyCollection<Product>> GetProductsAsync()
+    public async Task<IReadOnlyCollection<Product>> GetProductsAsync()
     {
-        return _repository.GetAllAsync();
+        return await _repository.GetAllAsync();
     }
 }
