@@ -1,3 +1,6 @@
+namespace Webshop.Api.Repository;
+
+using Webshop.Api.Models;
 public interface IProductRepository
 {
     Task<IReadOnlyCollection<Product>> GetAllAsync();

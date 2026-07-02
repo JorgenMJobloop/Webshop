@@ -1,3 +1,7 @@
+namespace Webshop.Api.Services;
+
+using Webshop.Api.Repository;
+
 public class OrderService : IOrderService
 {
     private readonly IProductRepository _productRepository;

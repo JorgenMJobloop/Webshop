@@ -1,4 +1,7 @@
 
+using Webshop.Api.Repository;
+using Webshop.Api.Services;
+
 namespace Webshop.Api;
 
 public class Program

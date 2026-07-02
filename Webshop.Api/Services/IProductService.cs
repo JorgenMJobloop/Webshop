@@ -1,3 +1,6 @@
+namespace Webshop.Api.Services;
+
+using Webshop.Api.Models;
 public interface IProductService
 {
     Task<IReadOnlyCollection<Product>> GetProductsAsync();

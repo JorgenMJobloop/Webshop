@@ -1,3 +1,7 @@
+namespace Webshop.Api.Services;
+
+using Webshop.Api.Models;
+using Webshop.Api.Repository;
 public sealed class ProductService : IProductService
 {
     private readonly IProductRepository _repository;

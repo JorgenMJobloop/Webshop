@@ -1,3 +1,5 @@
+namespace Webshop.Api.Models;
+
 public class Product
 {
     public Guid Id { get; init; }

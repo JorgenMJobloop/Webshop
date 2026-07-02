@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-
+using Webshop.Api.Services;
 [ApiController]
 [Route("api/[controller]")]
 public class ProductController : ControllerBase

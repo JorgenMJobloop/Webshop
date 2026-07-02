@@ -1,3 +1,7 @@
+namespace Webshop.Api.Repository;
+
+using Webshop.Api.Models;
+
 public sealed class InMemoryProductRepository : IProductRepository
 {
     private readonly List<Product> _products =
