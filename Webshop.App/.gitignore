@@ -12,8 +12,6 @@
 *.user
 *.userosscache
 *.sln.docstates
-*bootstrap 
-# ignore bootstrap files to avoid having to deal with more than 80+ not used 
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

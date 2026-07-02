@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="Webshop.Api/Webshop.Api.csproj" />
+  <Project Path="Webshop.App/Webshop.App.csproj" />
   <Project Path="Webshop.Tests/Webshop.Tests.csproj" />
 </Solution>

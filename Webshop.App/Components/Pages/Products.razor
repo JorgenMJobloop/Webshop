@@ -1,0 +1,39 @@
+@page "/products"
+@using Webshop.Api.Services;
+@using Webshop.Api.Models;
+@inject IProductClientApi ProductClientApi
+
+<PageTitle>Products</PageTitle>
+
+<section class="page-header">
+    <p class="eyebrow">Catalog</p>
+    <h1>Products</h1>
+</section>
+
+@if(_products is null) 
+{
+    <p>Loading products...</p>
+}
+else 
+{
+    <div class="product-grid">
+        @foreach(var product in _products)
+        {
+            <article class="product-card">
+                <h2>@product.Name</h2>
+                <p class="price">@product.Price.ToString("0.00:C")</p>
+                <p>In store: @product.StockQuantity</p>
+            </article>
+        }
+    </div>
+}
+
+@code 
+{
+    private IReadOnlyCollection<Product>? _products;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _products = await ProductClientApi.GetProductsAsync();
+    }
+}
